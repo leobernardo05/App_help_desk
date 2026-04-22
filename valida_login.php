@@ -1,20 +1,28 @@
 <?php
-    // usuarios do sistema
+    session_start(); //inicialização de sessão
+
+    // variável que verifica se a autenticação foi realizada
+    $usuario_autenticado = false;
+
+    // usuários do sistema
     $usuarios_app = array(
         array('email' => 'adm@teste.com.br', 'senha' => '123456'),
         array('email' => 'user@teste.com.br', 'senha' => 'abcd'),
-    )
+    );
 
-    foreach($usuarios_app as $user) {
-        $user['email'];
-        $user['senha'];
+    foreach($usuarios_app as $user) { 
+        if($user['email'] == $_POST['email'] && 
+           $user['senha'] == $_POST['senha']) {
+
+            $usuario_autenticado = true;
+            break; // para o loop ao encontrar o usuário
+        }
     }
-    
 
-    print_r($_POST);
-    echo '<br>'
-
-    echo $_POST['email'];
-    echo '<br>';
-    echo $_POST['senha'];
+    if($usuario_autenticado) {
+        echo 'Usuário autenticado';
+    } else {
+        header('Location: index.php?login=erro');
+        exit; // sempre usar exit após header
+    }
 ?>
