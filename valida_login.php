@@ -21,7 +21,9 @@
 
     if($usuario_autenticado) {
         echo 'Usuário autenticado';
+        $_SESSION['autenticado'] = 'SIM';
     } else {
+        $_SESSION['autenticado'] = 'NAO';
         header('Location: index.php?login=erro');
         exit; // sempre usar exit após header
     }
