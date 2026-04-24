@@ -61,11 +61,13 @@
               <?php foreach($chamados as $chamado) { ?>
 
                 <?php
+                  $chamado = trim($chamado);
                   $chamado_dados = explode('#', $chamado);
 
-                  if($_SESSION['perfil_id'] == 2){
+                  // se for usuario comum, exibe 2
+                  if($_SESSION['perfil_id'] == 2){ 
                     // só vamos exibir o chamado, se ele foi criado
-                    if ($_SESSION['id'] != $chamado_dados [0]){
+                    if($_SESSION['id'] != $chamado_dados [0]){
                       continue;
                     }
                   }
