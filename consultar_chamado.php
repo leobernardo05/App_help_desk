@@ -1,5 +1,24 @@
 <? require_once "validador_acesso.php" ?>
 
+<?php
+  // chamados
+  $chamados = array();
+
+  // abrir arquivo arquivo.txt aqui
+  $arquivo = fopen('arquivo.txt', 'r'); //'r' apenas lê o arquivo
+
+  // enquanto houver registros (linhas) a serem recuperadas
+  while(!feof($arquivo)) { //testa pelo fim do aruivo
+    // linhas
+    $registro = fgets($arquivo);
+    echo $registro . '<br/>';
+    $chamados[] = $registro;
+  }
+
+  //fechar arquivo aberto
+  fclose($arquivo);
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -41,15 +60,6 @@
             
             <div class="card-body">
               
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
-
               <div class="card mb-3 bg-light">
                 <div class="card-body">
                   <h5 class="card-title">Título do chamado...</h5>
