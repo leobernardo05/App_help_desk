@@ -11,7 +11,6 @@
   while(!feof($arquivo)) { //testa pelo fim do aruivo
     // linhas
     $registro = fgets($arquivo);
-    echo $registro . '<br/>';
     $chamados[] = $registro;
   }
 
@@ -60,7 +59,7 @@
             
             <div class="card-body">
               <?php foreach($chamados as $chamado) { ?>
-              
+
                 <?php
                   $chamado_dados = explode('#', $chamado);
 
