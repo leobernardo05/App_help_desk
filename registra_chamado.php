@@ -1,9 +1,7 @@
 <?php
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+    // inicialização da sessão PHP
+    session_start();
 
-    
     $titulo = str_replace('#', '-', $_POST['titulo']);
     $categoria = str_replace('#', '-', $_POST['categoria']);
     $descricao = str_replace('#', '-', $_POST['descricao']);
