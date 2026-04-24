@@ -5,7 +5,7 @@
   $chamados = array();
 
   // abrir arquivo arquivo.txt aqui
-  $arquivo = fopen('arquivo.txt', 'r'); //'r' apenas lê o arquivo
+  $arquivo = fopen('../../app_help_desk/arquivo.txt', 'r'); //'r' apenas lê o arquivo
 
   // enquanto houver registros (linhas) a serem recuperadas
   while(!feof($arquivo)) { //testa pelo fim do aruivo
